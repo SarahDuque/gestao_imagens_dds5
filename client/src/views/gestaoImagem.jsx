@@ -9,7 +9,7 @@ function GestaoImagem() {
         carregarImagens()
     }, []);
 
-    async function cadastrarImagem(params) {
+    async function cadastrarImagem() {
         const formData = new FormData();
         formData.append('descricao', descricao);
         formData.append('imagem', imagem);

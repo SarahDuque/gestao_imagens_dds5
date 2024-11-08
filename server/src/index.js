@@ -3,6 +3,7 @@ import fileUpload from 'express-fileupload';
 import cors from 'cors'
 
 import { apagarImagem, criarImagem, editarImagem, downloadImagem, mostrarImagens, mostrarUmaImagem } from './controllers/ImagemController.js';
+import { criarUsuario, mostrarUsuario } from './controllers/UsuarioController.js';
 
 
 const app = express();
@@ -25,7 +26,9 @@ app.delete('/imagem/:id_imagem', apagarImagem);
 
 app.get('/imagem/:id_imagem', mostrarUmaImagem);
 
-
+//CRUD Usuario
+app.post('/usuario', criarUsuario);
+app.get('/usuario', mostrarUsuario);
 
 app.listen(porta, ()=>{
     console.log(`API Rodando na porta ${porta}`)
